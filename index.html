@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Flower SVG</title>
+    <style>
+        .the-svg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ddd;
+        }
+
+        .bg{
+            fill:url(#pattern-bg);
+                }
+
+        .cls-1{fill:#ce4372;stroke:#231815;stroke-miterlimit:10;stroke-width:.48px}
+
+        @keyframes eye-ani{
+            to {transform: scaleY(0.2);}
+
+        }
+
+        .right-eye{
+            animation: eye-ani 1s alternate infinite;
+            transform-origin: 27px 19px;
+        }
+
+        .magnifier{
+            cursor: pointer;
+        }
+        #mask-glass{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <svg class="the-svg">
+
+        <defs>
+        <!-- pattern -->
+            <pattern id="pattern-bg" x="0" y="0" width="0.1" height="0.1">
+                <circle class="cls-1" cx="11.86" cy="11.86" r="11.62"/>
+                <circle class="cls-1" cx="35.46" cy="11.86" r="11.62"/>
+                <circle class="cls-1" cx="35.46" cy="35.4" r="11.62"/>
+                <circle class="cls-1" cx="11.86" cy="35.75" r="11.62"/>
+                <circle cx="23.48" cy="23.78" r="11.62" style="fill:#ebbf3f;stroke-width:.48px;stroke:#231815;stroke-miterlimit:10"/>
+                <g fill="#231815">
+                <circle class="left-eye" cx="18.82" cy="19.81" r="1.62"/>
+                <circle class="right-eye" cx="27.85" cy="19.81" r="1.62"/>
+                </g>
+                <path d="M31.77 24.59a8.29 8.29 0 0 1-16.58 0" style="fill:none;stroke:#231815;stroke-miterlimit:10"/>
+            </pattern>
+        
+            <!-- mask glass -->
+            <mask id="mask-glass">
+                <circle cx="60.56" cy="60.56" r="47.75" style="fill:white"/>
+            </mask>
+
+            <script>
+
+                window.addEventListener('DOMContentLoaded', ()=>{
+                    const magnifierEl = document.querySelector('.magnifier');
+                    const maskglassEl = document.querySelector('#mask-glass circle')
+
+
+                    window.addEventListener('mousemove', (event)=>{
+                       const x1 = event.clientX;
+                       const y1 = event.clientY;
+
+                       const magnifierRect = magnifierEl.getBoundingClientRect()
+                        const magnifierRectWidth = magnifierRect.width
+                        const magnifierRectHeight = magnifierRect.height
+
+                        const maskglassRect = maskglassEl.getBoundingClientRect()
+                        const maskglassHalfWidth = maskglassRect.width/2
+                        const maskglassHalfHeight = maskglassRect.height/2
+                        
+                        magnifierEl.style.transform = `translate(${x1 - magnifierRectWidth - maskglassHalfWidth}px,${y1 - magnifierRectHeight - maskglassHalfHeight + 23}px)`
+                        maskglassEl.style.transform = `translate(${x1 - maskglassHalfWidth}px, ${y1 - maskglassHalfHeight}px)`
+                    })
+                })
+                
+
+            </script>
+
+        </defs>
+
+       
+        <path class="magnifier" d="m316.43 263.24-45.37-40a60.7 60.7 0 1 0-13.37 14.2l45.86 40.39a9.74 9.74 0 0 0 13.75-.83 9.75 9.75 0 0 0-.87-13.76Zm-95.61-26.06a47.75 47.75 0 1 1 47.74-47.74 47.75 47.75 0 0 1-47.74 47.74Z" 
+        transform="translate(-160.25 -128.87)" style="fill:rebeccapurple"/>
+       
+        <g mask="url(#mask-glass)">
+            <rect class="bg" x="0" y="0" width="100%" height="100%"></rect>
+        </g>
+        
+    </svg>
+
+
+
+</body>
+</html>
