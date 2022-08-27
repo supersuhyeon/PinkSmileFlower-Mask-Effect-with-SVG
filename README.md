@@ -51,8 +51,8 @@ HTML, CSS, JavaScript, and SVG
 
              magnifierEl.style.transform = `translate(${x1 - magnifierRectWidth - maskglassHalfWidth - 0.5}px,${y1 - magnifierRectHeight - maskglassHalfHeight + 23}px)`
              maskglassEl.style.transform = `translate(${x1 - maskglassHalfWidth}px, ${y1 - maskglassHalfHeight}px)`
-                    })
-                })
+       })
+    })
 </script>
 ```
 
