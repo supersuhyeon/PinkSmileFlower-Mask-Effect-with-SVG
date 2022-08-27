@@ -16,10 +16,9 @@
         }
 
         .bg{
-
             transform: scale(1.5);
             fill:url(#pattern-bg);              
-                }
+        }
 
         .bg2{
             fill: url(#pattern-bg);
@@ -97,7 +96,7 @@
                         const maskglassHalfWidth = maskglassRect.width/2
                         const maskglassHalfHeight = maskglassRect.height/2
                         
-                        magnifierEl.style.transform = `translate(${x1 - magnifierRectWidth - maskglassHalfWidth}px,${y1 - magnifierRectHeight - maskglassHalfHeight + 23}px)`
+                        magnifierEl.style.transform = `translate(${x1 - magnifierRectWidth - maskglassHalfWidth - 0.5}px,${y1 - magnifierRectHeight - maskglassHalfHeight + 23}px)`
                         maskglassEl.style.transform = `translate(${x1 - maskglassHalfWidth}px, ${y1 - maskglassHalfHeight}px)`
                     })
                 })
@@ -107,17 +106,16 @@
 
         </defs>
 
-       
-        <path class="magnifier" d="m316.43 263.24-45.37-40a60.7 60.7 0 1 0-13.37 14.2l45.86 40.39a9.74 9.74 0 0 0 13.75-.83 9.75 9.75 0 0 0-.87-13.76Zm-95.61-26.06a47.75 47.75 0 1 1 47.74-47.74 47.75 47.75 0 0 1-47.74 47.74Z" 
-        transform="translate(-160.25 -128.87)" style="fill:rebeccapurple"/>
-       
         <rect class="bg2" x="0" y="0" width="100%" height="100%"></rect>
 
         <g mask="url(#mask-glass)">
             <rect class="bg-gray" x="0" y="0" width="100%" height="100%"></rect>
-            <rect class="bg" x="0" y="0" width="100%" height="100%"></rect>
+            <rect class="bg" x="0" y="0" width="100%" height="100%" ></rect>
         </g>
-        
+
+        <path class="magnifier" d="m316.43 263.24-45.37-40a60.7 60.7 0 1 0-13.37 14.2l45.86 40.39a9.74 9.74 0 0 0 13.75-.83 9.75 9.75 0 0 0-.87-13.76Zm-95.61-26.06a47.75 47.75 0 1 1 47.74-47.74 47.75 47.75 0 0 1-47.74 47.74Z" 
+        transform="translate(-160.25 -128.87)" style="fill:rebeccapurple"/>
+       
     </svg>
 
 
