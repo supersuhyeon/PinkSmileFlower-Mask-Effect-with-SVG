@@ -32,25 +32,25 @@ HTML, CSS, JavaScript, and SVG
 
 ```js
  <script>
-                window.addEventListener('DOMContentLoaded', ()=>{
-                    const magnifierEl = document.querySelector('.magnifier');
-                    const maskglassEl = document.querySelector('#mask-glass circle')
+    window.addEventListener('DOMContentLoaded', ()=>{
+      const magnifierEl = document.querySelector('.magnifier');
+      const maskglassEl = document.querySelector('#mask-glass circle')
 
 
-                    window.addEventListener('mousemove', (event)=>{
-                       const x1 = event.clientX;
-                       const y1 = event.clientY;
+         window.addEventListener('mousemove', (event)=>{
+            const x1 = event.clientX;
+            const y1 = event.clientY;
 
-                       const magnifierRect = magnifierEl.getBoundingClientRect()
-                        const magnifierRectWidth = magnifierRect.width
-                        const magnifierRectHeight = magnifierRect.height
+             const magnifierRect = magnifierEl.getBoundingClientRect()
+             const magnifierRectWidth = magnifierRect.width
+             const magnifierRectHeight = magnifierRect.height
 
-                        const maskglassRect = maskglassEl.getBoundingClientRect()
-                        const maskglassHalfWidth = maskglassRect.width/2
-                        const maskglassHalfHeight = maskglassRect.height/2
+             const maskglassRect = maskglassEl.getBoundingClientRect()
+             const maskglassHalfWidth = maskglassRect.width/2
+             const maskglassHalfHeight = maskglassRect.height/2
 
-                        magnifierEl.style.transform = `translate(${x1 - magnifierRectWidth - maskglassHalfWidth - 0.5}px,${y1 - magnifierRectHeight - maskglassHalfHeight + 23}px)`
-                        maskglassEl.style.transform = `translate(${x1 - maskglassHalfWidth}px, ${y1 - maskglassHalfHeight}px)`
+             magnifierEl.style.transform = `translate(${x1 - magnifierRectWidth - maskglassHalfWidth - 0.5}px,${y1 - magnifierRectHeight - maskglassHalfHeight + 23}px)`
+             maskglassEl.style.transform = `translate(${x1 - maskglassHalfWidth}px, ${y1 - maskglassHalfHeight}px)`
                     })
                 })
 </script>
